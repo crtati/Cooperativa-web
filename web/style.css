@@ -1,0 +1,20 @@
+.boton-tarjeta {
+    position: unset ;
+    width: 50%;
+    background: linear-gradient(0deg, rgba(36, 0, 0, 1) 0%, rgba(121, 9, 9, 1) 35%, rgba(255, 0, 0, 1) 100%);
+    border: 0px;
+}
+
+.boton-tarjeta:hover {
+    box-shadow: 0 4px 16px rgb(172, 49, 49);
+    transition: all 0.2s ease;
+}
+.inp {
+    width: 40px;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+.img{
+    object-fit: cover;
+}
