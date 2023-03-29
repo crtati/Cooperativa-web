@@ -1,3 +1,36 @@
+:root{
+    --green: #019b41;
+    --black: #130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border: .2rem solid  rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover: .2rem solid var(--black);
+
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+.logo i{
+    color: var(--green);
+}
+
+
+nav li a{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: var(--black);
+    
+}
+
+nav ul li a span:hover{
+    color: var(--green);
+}
+
 .boton-tarjeta {
     position: unset ;
     width: 50%;
@@ -17,4 +50,37 @@
 }
 .img{
     object-fit: cover;
+    
 }
+
+
+div .imgs {
+    height: 75vh;
+    width: 50vh;
+    padding: 50px;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+}
+
+footer{
+    background-color: #eee;
+    padding: 100px 0;
+    text-align: center;
+}
+footer .logotipo-footer{
+    width: 200px;
+    margin-bottom: 20px;
+}
+footer p{
+    color: var(--black);
+}
+
+
+.icono-rrss{
+    width: 30px;
+    margin: 10px 9px;
+    
+    }
+
+
+
