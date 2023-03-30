@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="style.css">
+    <!--Icono web-->
+    <link rel="website icon" type="png" href="assets/icono.png"> </i>
 </head>
 
 <body>
@@ -502,21 +504,24 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
-                            placeholder="">
+                    <div class="modal-content border-white">
+                        <form>
+                            <div class="mb-3" >
+                                <label for="txt_correo" class="form-label">Correo electrico</label>
+                                <input type="email" class="form-control" id="txt_correo" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_contrasena" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="txt_contrasena">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Aceptar</button>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleFormControlInput1"
-                            placeholder="">
-                    </div>
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Aceptar</button>
                 </div>
             </div>
         </div>
