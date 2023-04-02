@@ -13,7 +13,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <!--Icono web-->
     <link rel="website icon" type="png" href="assets/icono.png"> </i>
@@ -21,14 +21,14 @@
 
 <body>
     <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="navbar bg-light" data-bs-theme="bg-light">
+    
         <nav class="navbar navbar-expand-lg bg-body-dark" >
             <div class="container-fluid">
                 <a class="navbar-brand logo" href="#"><i class="bi bi-tree-fill"></i> Cooperativa </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <ul class="nav justify-content-center">
+                <ul class="nav justify-content-between">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" style="color: #130f40;">
                             <span class="fs-4">inicio
@@ -55,56 +55,81 @@
                 </ul>
                 </div>
             </div>
+            <div class="nav">
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    <div class="active" role="status">
+                        <i class="bi bi-person fs-3"> </i><span class="visually fs-3"></span>
+                    </div>
+                    
+                    
+                </button>
+            </div>
+            <div class="nav">
+                <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                    <div class="active" role="status">
+                        <i class="bi bi-cart fs-3"></i><span class="visually fs-5"></span>
+                    </div>      
+                </button>
+            </div>
         </nav>
-        <div class="nav navbar-right px-2">
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                <div class="" role="status">
-                    <span class="visually-hidden"></span>
-                </div>
-                <i class="bi bi-person fs-5"> Inicia sesión</i>
-                
-            </button>
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                <div class="" role="status">
-                    <span class="visually-hidden"></span>
-                </div>
-                <i class="bi bi-cart fs-5"> Carrito</i>
-                
-            </button>
-        </div>
-    </nav>
+        
+    
 
     <!-- CARRUSEL O SLIDER -->
-    <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active" data-bs-interval="10000">
             <img src="assets/Slider1.jpg" class="d-block w-100 imgs" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>TUS PLANTAS SON
+                    LOS NUEVOS HIJOS</h2>
+                    <p>Te invitamos a conocer tu nueva familia🌱</p>
+                <input type="submit" value="Ir a tienda" id="carrusel-tienda-btn">
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" data-bs-interval="2000">
             <img src="assets/Slider2.jpg" class="d-block w-100 imgs" alt="...">
+            <div class="carousel-caption-2 d-none d-md-block">
+                <h2>CAUSAS
+                    SOCIALES</h2>
+                    <p>Por cada compra que realices, tendras un 5%
+                        de descuento que va destinado a
+                        ayudar en diferentes causas
+                        durante el año.</p>
+                <input type="email" placeholder="Correo" id="carrusel-email">
+                <input type="submit" value="Suscribete" id="carrusel-email-btn">
+            </div>
           </div>
           <div class="carousel-item">
             <img src="assets/Slider3.jpg" class="d-block w-100 imgs" alt="...">
+            <div class="carousel-caption-3 d-none d-md-block">
+                <h2>Las plantas son como hijos</h2>
+                <input type="submit" value="Suscribete" id="carrusel-contacto-btn">
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
 
 
+
+
+
+
     <br/>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center p-4" style="background-color: #eee">
         <h1 class="display-6">Tierra de hojas</h1>
         <a class="text-reset fw-bold" href=""></a>
     </div>
@@ -113,7 +138,7 @@
     <div class="row" id="tienda">
         <div class="col" align="center">
             <div class="card" style="width: 30rem;">
-                <img class="img" src="assets/tierra1.jpg" style="height: 20rem;" class="card-img-top" alt="...">
+                <img class="img img-fluid" src="assets/tierra1.jpg" style="height: 20rem;"  class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Tierra compost 50 litros Roots</h5>
                     <p class="card-text">
@@ -139,7 +164,7 @@
         </div>
         <div class="col" align="center">
             <div class="card" style="width: 30rem;">
-                <img class="img" src="assets/tierra2.jpg" style="height: 20rem;" class=" card-img-top" alt="...">
+                <img class="img img-fluid" src="assets/tierra2.jpg" style="height: 20rem;" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Tierra hoja 50 litros Roots</h5>
                     <p class="card-text">
@@ -568,20 +593,60 @@
           </div>
         </div>
       </div>
+      <br>
+      <br>
     <!-- Footer -->
     
-        <footer>
-            <a class="navbar-brand logo" href="#"><i class="bi bi-tree-fill"></i> Cooperativa </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div>
-            <p class="text-center">Siguenos en:</p>
-            <a href="#"><img class="icono-rrss" src="assets/facebook (1).png" alt="Facebook"></a>
-            <a href="#"><img class="icono-rrss" src="assets/instagram.png" alt="Instagram"></a>
-            <a href="#"><img class="icono-rrss" src="assets/gorjeo (2).png" alt="Twittter"></a>
-            <a href="#"><img class="icono-rrss" src="assets/whatsapp (2).png" alt="WhatsApp"></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>menu</h4>
+                        <ul>
+                            <li><a href="">inicio</a></li>
+                            <li><a href="">tienda</a></li>
+                            <li><a href="">seguimiento</a></li>
+                            <li><a href="#">clientes</a></li>
+                            <li><a href="#">contacto</a></li>
+                        </ul>
+                    
+                </div>
+                
+                <div class="footer-col">
+                    <h4>informacion</h4>
+                        <ul>
+                            <li><a href="">seguimineto</a></li>
+                            <li><a href="">cambios y devoluciones</a></li>
+                            <li><a href="">terminos y condiciones de uso</a></li>
+                            <li><a href="">cuidado de tus plantas</a></li>
+                            
+                        </ul>
+                    
+                </div>
+                <div class="footer-col">
+                    <h4>siguenos</h4>
+                        <div class="social-links">
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                            
+                        
+                    
+                </div>
+                <div class="footer-col">
+                    <h4>subscribe</h4>
+                        <div class="subscribe-form">
+                            <input type="email" placeholder="Correo" id="footer-email">
+                            <input type="submit" value="Suscribete" id="footer-email-btn">
+                        </div>
+                    
+                </div>
             </div>
+            
+        </div>
+
          <!-- Copyright -->
          <div class="text-center p-4">
             © 2023 Copyright:

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 :root{
     --green: #019b41;
     --black: #130f40;
@@ -6,8 +8,35 @@
     --border: .2rem solid  rgba(0,0,0,.1);
     --outline:.1rem solid rgba(0,0,0,.1);
     --outline-hover: .2rem solid var(--black);
-
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    background-color: #eee;
+}
+.navbar{
+background-color: #a0cfb46b;
+box-shadow: var(--box-shadow);
+}
+
+.nav{
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.btn:hover{
+    background: #019b41;
+    color: #ffffff;
+}
+
 
 .logo{
     font-size: 2rem;
@@ -53,34 +82,213 @@ nav ul li a span:hover{
     
 }
 
-
+/* carrusel*/
 div .imgs {
     height: 75vh;
     width: 50vh;
     padding: 50px;
     box-shadow: var(--box-shadow);
-    background-color: #fff;
-}
-
-footer{
     background-color: #eee;
-    padding: 100px 0;
+}
+.carousel-caption {
+    position: absolute;
+    right: 50%;
+    top: 20rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
     text-align: center;
 }
-footer .logotipo-footer{
-    width: 200px;
-    margin-bottom: 20px;
-}
-footer p{
+.carousel-caption-2 {
+    position: absolute;
+    right: 15%;
+    top: 5rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
     color: var(--black);
+    text-align: center;
+}
+.carousel-caption-3 {
+    position: absolute;
+    right: 15%;
+    top: 15rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: var(--black);
+    text-align: center;
+}
+#carrusel-email{
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding-left: 8px;
+    font-size: 16px;
+margin-bottom: 16px;
+}
+
+#carrusel-email-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color:var(--black);
+    outline: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+#carrusel-tienda-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color:var(--black);
+    outline: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+#carrusel-contacto-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color:var(--black);
+    outline: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#carrusel-email-btn:hover{
+        color: white;
+        background-color: var(--green);
+
+}
+#carrusel-tienda-btn:hover{
+        color: white;
+        background-color: var(--green);
+
+}
+#carrusel-contacto-btn:hover{
+        color: white;
+        background-color: var(--green);
+
 }
 
 
-.icono-rrss{
-    width: 30px;
-    margin: 10px 9px;
+/* footer*/
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.footer{
+    background-color: #a0cfb46b;
+    padding: 70px 0;
+    box-shadow: var(--box-shadow);
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: var(--black);
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
     
-    }
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--green);
+    height: 2px;
+    box-sizing: border-box ;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;   
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 300;
+    color: var(--light-color);
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: var(--green);
+    padding: 8pX;
+}
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: var(--black);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+    color: white;
+    background-color: var(--green);
+}
 
 
+#footer-email{
+    width: 150px;
+    height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding-left: 8px;
+    font-size: 16px;
+margin-bottom: 16px;
+}
+
+#footer-email-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color:var(--black);
+    outline: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#footer-email-btn:hover{
+        color: white;
+        background-color: var(--green);
+
+}
+
+@media(max-width: 767px){
+.footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+}
 
