@@ -32,6 +32,11 @@ box-shadow: var(--box-shadow);
     padding-right: 5px;
 }
 
+.btn-car{
+    background: var(--black);
+    color: #ffffff;
+}
+
 .btn:hover{
     background: #019b41;
     color: #ffffff;
@@ -87,7 +92,7 @@ div .imgs {
     height: 75vh;
     width: 50vh;
     padding: 50px;
-    box-shadow: var(--box-shadow);
+    ;
     background-color: #eee;
 }
 .carousel-caption {
@@ -151,7 +156,7 @@ margin-bottom: 16px;
     font-size: 16px;
 }
 #carrusel-contacto-btn{
-    width: 100px;
+    width: 150x;
     height: 40px;
     border-radius: 4px;
     background-color:var(--black);
@@ -176,6 +181,90 @@ margin-bottom: 16px;
         background-color: var(--green);
 
 }
+/* main */
+.display-6{
+    background: var(--green);
+    color: white;
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    clip-path: polygon(100% 0,93% 50%,100% 99%, 0% 100%, 7% 50%, 0% 0%);
+
+}
+
+/*slider clientes*/
+.clientes {
+    padding: 1rem;
+    
+}
+
+.clientes .card{
+    background: #fff;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+.clientes .card:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+
+}
+.clientes .card img{
+    margin-left: 30%;
+    margin-top: 2%;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    ;
+}
+
+.cliente .card p{
+    padding: 1rem 0;
+    line-height: 1.8;
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+
+.clientes .clientes-slider .box h3{
+    padding-bottom: .5rem;
+    color: var(--black);
+    font-size: 2.2rem;
+}
+.clientes .card .estrellas{
+    color: var(--green);
+    font-size: 1.7rem ; 
+
+}
+
+
+form .links{
+display: flex;
+justify-content: space-between;
+
+}
+.modal-header .modal-title{
+    color: var(--black);
+}
+
+div label{
+    color: var(--black);
+}
+form  div p a{
+    text-decoration: none;
+    color: var(--green);
+}
+form  div p a:hover{
+    color: blue;
+}
+
+.modal{
+    background:#a0cfb46b;
+}
+
+
 
 
 /* footer*/
@@ -292,3 +381,58 @@ margin-bottom: 16px;
 
 }
 
+/*REGISTRO*/
+
+.form-registro{
+    width: 400px;
+    background-color:#a0cfb46b;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 4px;
+    color:var(--black) ;
+    box-shadow:  3px 13px 37px #000 ;
+}
+
+.form-registro h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controls{
+    width: 100%;
+    background: #eee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #130f40;
+    font-size: 18px;
+}
+.form-registro p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    
+    
+}
+.form-registro a{
+    color: #019b41;
+    text-decoration: none;
+}
+.form-registro a:hover{
+    color: #019b41;
+    text-decoration: underline;
+}
+div .check{
+    margin-top: 8px;
+    width: 15px;
+    height: 15px;
+}
+div .btn-car{
+    margin-top: 10px;
+    margin-bottom:10px ;
+}
+.term{
+    display: flex;
+}
