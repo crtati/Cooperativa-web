@@ -30,3 +30,10 @@ function validarCheck(){
         document.getElementById("aceptar").hidden = false;
     }
 }
+function toastCarrito(){
+    const toast = document.getElementById('carritoToast');
+        const toastBootstrap 
+            = bootstrap.Toast.getOrCreateInstance(toast);
+
+        toastBootstrap.show();
+}
