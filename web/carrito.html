@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- icono web -->
+    <link rel="website icon" type="png" href="assets/icono.png"> </i>
+    <!-- JAVASCRIPT -->
+    <script src="js/funciones.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-dark" >
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="#"><i class="bi bi-tree-fill"></i> Cooperativa </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav justify-content-between">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html" style="color: #130f40;">
+                        <span class="fs-4">inicio
+                        </span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" style="color: #130f40;"><span class="fs-4">tienda</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="seguimiento.html" style="color: #130f40;">
+                        <span class="fs-4">seguimiento
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #130f40;">
+                        <span class="fs-4">nuestros clientes
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #130f40;">
+                        <span class="fs-4">contacto
+                        </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                <div class="active" role="status">
+                    <i class="bi bi-person fs-3"> </i><span class="visually fs-3"></span>
+                </div>
+                
+                
+            </button>
+        </div>
+        <div class="nav">
+            <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                <div class="active" role="status">
+                    <i class="bi bi-cart fs-3"></i><span class="visually fs-5"></span>
+                </div>      
+            </button>
+        </div>
+    </nav>
+
+    <div class="px-5">
+            <div class="px-5">
+                <p>
+                    <table class="table table-success table-columns">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Productos</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td class="table_productos">
+                                <img src="assets/mace1.png"  alt="">
+                                <h6 class="tittle">Macetero</h6>
+                            </td>
+                        <td class="table_precio">$3.590</td>
+                        <td class="table_cantidad">
+                            <input class="inp" type="number" min="1" value="0">
+                            <button type="button" class="btn btn-danger">X</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </p>
+            </div>
+            <div class="modal-footer px-4">
+                <div>
+                    <button type="button" class="btn btn-outline-secondary">Cancelar</button>
+                </div>
+                <div class="px-4">
+                    <button type="button" class="btn btn-outline-success">Comprar</button>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
