@@ -1,3 +1,15 @@
+function validarDatosRegistro(){
+    let nombres = document.getElementById("nombres").value;
+    let apellidos = document.getElementById("apellidos").value;
+    let correo = document.getElementById("correo").value;
+    let password = document.getElementById("password").value;
+        if(nombres == '' || apellidos == '' || correo == '' || password == '') {
+            document.getElementById("datos").hidden = false;
+        }else{
+            validarCheck();
+        }
+}
+
 
 function validarCheck(){
     var check = document.forms["miForm"]["miCheck"].checked;
@@ -30,13 +42,7 @@ function validarCheck(){
         document.getElementById("aceptar").hidden = false;
     }
 }
-function toastCarrito(){
-    const toast = document.getElementById('carritoToast');
-        const toastBootstrap 
-            = bootstrap.Toast.getOrCreateInstance(toast);
 
-        toastBootstrap.show();
-}
 function formateaRut() {
 
     let rut = document.getElementById("txt_rut").value;
@@ -63,6 +69,8 @@ function formateaRut() {
     }
     document.getElementById("txt_rut").value = rutPuntos;
 }
+
+
 function almacenarAdmin() {
     document.getElementById("sp_loading").hidden = false;
 
@@ -78,4 +86,12 @@ function almacenarAdmin() {
         document.getElementById("sp_loading").hidden = true;
         window.location.href = "administrador.html"; 
     }, 3000);
+}
+
+function toastCarrito(){
+    const toast = document.getElementById('carritoToast');
+        const toastBootstrap 
+            = bootstrap.Toast.getOrCreateInstance(toast);
+
+        toastBootstrap.show();
 }

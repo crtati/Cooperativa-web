@@ -82,6 +82,7 @@
             <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus Apellidos">
             <input class="controls" class="controls"type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
             <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
+            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
             <h6 id="aceptar" class="text-center" hidden="true">Tiene que acepta</h6>
             <div class="term">
                 <form name="miForm">
@@ -93,7 +94,7 @@
                 </div>
             </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" class="btn btn-car btn-primary" onclick="validarCheck()">
+            <button type="submit" class="btn btn-car btn-primary" onclick="validarDatosRegistro()">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="sp_loading" hidden="true"></span>
                 Registrarse
             </button>
