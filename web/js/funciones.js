@@ -95,3 +95,9 @@ function toastCarrito(){
 
         toastBootstrap.show();
 }
+
+function recuperacion(){
+    let correo = document.getElementById("correo").value;
+    console.log('Correo: ' + correo);
+    Swal.fire('En breve recibirás un correo con las instrucciones a seguir para terminar el proceso.')
+}
