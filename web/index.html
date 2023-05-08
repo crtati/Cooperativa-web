@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="style.css">
     <!--Icono web-->
     <link rel="website icon" type="png" href="assets/icono.png"> </i>
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- JAVASCRIPT -->
     <script src="js/funciones.js"></script>
 </head>
@@ -548,13 +552,13 @@
                     <div class="modal-content border-white">
                         <form>
                             <div class="mb-3" >
-                                <label for="txt_correo" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="txt_correo" aria-describedby="emailHelp">
+                                <label for="txt_correo_ini" class="form-label">Correo electronico</label>
+                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="txt_correo_ini" aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text"></div>
                             </div>
                             <div class="mb-3">
-                                <label for="txt_contrasena" class="form-label">Contraseña</label>
-                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="txt_contrasena">
+                                <label for="txt_contrasena_ini" class="form-label">Contraseña</label>
+                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="txt_contrasena_ini">
                             </div>
                             <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
@@ -568,8 +572,9 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-car btn-primary ">Inicio de sesion</button>
+                            <button type="button" class="btn btn-car btn-primary " onclick="validarDatosInicioSesion()">Inicio de sesion</button>
                             <button type="submit" class="btn btn-car btn-primary "><a href="inicioadmin.html">Inicio sesion Admin</a></<p></button>
+                                
                         </div>
                             
                             <div>

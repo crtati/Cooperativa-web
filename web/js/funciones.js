@@ -1,6 +1,74 @@
+function validarDatosInicioSesion(){
+    let correo = document.getElementById("txt_correo_ini").value;
+    let contrasena = document.getElementById("txt_contrasena_ini").value;
+        if(correo == '' || contrasena == '') {
+            document.getElementById("datos").hidden = false;
+        }else{
+            correo = $("#txt_correo_ini").val();
+            contrasena = $("#txt_contrasena_ini").val();
+
+
+            var data = {
+                nombreFuncion: "ClienteLogin",
+                parametros: [correo, contrasena]
+            };
+
+            $.ajax({
+                method: "POST",
+                url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    if (response.result == 'LOGIN OK') {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 4000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Credenciales correctas'
+                        });
+                    } else if (response.result == 'LOGIN NOK') {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 4000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+
+                        Toast.fire({
+                            icon: 'warning',
+                            title: 'Credenciales inválidas'
+                        });
+                    }
+
+
+                    console.log(response);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+                }
+}
+
+
+
 function validarDatosRegistro(){
-    let nombres = document.getElementById("nombres").value;
-    let apellidos = document.getElementById("apellidos").value;
+    let nombres = document.getElementById("nombre").value;
+    let apellidos = document.getElementById("apellido").value;
     let correo = document.getElementById("correo").value;
     let password = document.getElementById("password").value;
         if(nombres == '' || apellidos == '' || correo == '' || password == '') {
@@ -14,80 +82,80 @@ function validarDatosRegistro(){
 function validarCheck(){
     var check = document.forms["miForm"]["miCheck"].checked;
     if(check == true){
-        var nombres = $("#nombres").val();
-    var apellidos = $("#apellidos").val();
-    var correo = $("#correo").val();
-    var contrasena = $("#password").val();
+        var nombres = $("#nombre").val();
+        var apellidos = $("#apellido").val();
+        var correo = $("#correo").val();
+        var contrasena = $("#password").val();
 
-    console.log(nombres);
-    console.log(apellidos);
-    console.log(correo);
-    console.log(contrasena);
+        console.log(nombres);
+        console.log(apellidos);
+        console.log(correo);
+        console.log(contrasena);
 
-    var data = {
-        nombreFuncion: "ClienteAlmacenar",
-        parametros: [nombres, apellidos, correo, contrasena]
-    };
+        var data = {
+            nombreFuncion: "ClienteAlmacenar",
+            parametros: [nombres, apellidos, correo, contrasena]
+        };
 
-    $.ajax({
-        method: "POST",
-        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
-        data: JSON.stringify(data),
-        success: function (response) {
-            if (response.result[0].RESPUESTA == 'OK') {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 4000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
+        $.ajax({
+            method: "POST",
+            url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+            data: JSON.stringify(data),
+            success: function (response) {
+                if (response.result[0].RESPUESTA == 'OK') {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 4000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
 
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Cliente registrado correctamente'
-                });
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Cliente registrado correctamente'
+                    });
 
-                $("#nombres").val("");
-                $("#apellidos").val("");
-                $("#correo").val("");
-                $("#password").val("");
+                    $("#nombre").val("");
+                    $("#apellido").val("");
+                    $("#correo").val("");
+                    $("#password").val("");
 
-                /*llevar a la pagina principal*/ 
-                /*window.location.href = "index.html"; */
-            } else if (response.result[0].RESPUESTA == 'ERR01') {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 4000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
+                    /*llevar a la pagina principal*/ 
+                    /*window.location.href = "index.html"; */
+                } else if (response.result[0].RESPUESTA == 'ERR01') {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 4000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
 
-                Toast.fire({
-                    icon: 'warning',
-                    title: 'Usuario ingresado ya se encuentra registrado'
-                });
+                    Toast.fire({
+                        icon: 'warning',
+                        title: 'Usuario ingresado ya se encuentra registrado'
+                    });
+                }
+
+
+                console.log(response);
+            },
+            error: function (error) {
+                console.log(error);
             }
-
-
-            console.log(response);
-        },
-        error: function (error) {
-            console.log(error);
+        });
+        }else{
+            document.getElementById("aceptar").hidden = false;
         }
-    });
-    }else{
-        document.getElementById("aceptar").hidden = false;
-    }
 }
 
 
