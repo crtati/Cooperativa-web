@@ -14,34 +14,82 @@ function validarDatosRegistro(){
 function validarCheck(){
     var check = document.forms["miForm"]["miCheck"].checked;
     if(check == true){
-        document.getElementById("sp_loading").hidden = false;
+        var nombres = $("#nombres").val();
+    var apellidos = $("#apellidos").val();
+    var correo = $("#correo").val();
+    var contrasena = $("#password").val();
+
+    console.log(nombres);
+    console.log(apellidos);
+    console.log(correo);
+    console.log(contrasena);
+
+    var data = {
+        nombreFuncion: "ClienteAlmacenar",
+        parametros: [nombres, apellidos, correo, contrasena]
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+        data: JSON.stringify(data),
+        success: function (response) {
+            if (response.result[0].RESPUESTA == 'OK') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Cliente registrado correctamente'
+                });
+
+                $("#nombres").val("");
+                $("#apellidos").val("");
+                $("#correo").val("");
+                $("#password").val("");
+
+                /*llevar a la pagina principal*/ 
+                /*window.location.href = "index.html"; */
+            } else if (response.result[0].RESPUESTA == 'ERR01') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'warning',
+                    title: 'Usuario ingresado ya se encuentra registrado'
+                });
+            }
 
 
-    
-        let nombres = document.getElementById("nombres").value;
-        let apellidos = document.getElementById("apellidos").value;
-        let correo = document.getElementById("correo").value;
-        let password = document.getElementById("password").value;
-        setTimeout(() => {
-            console.log('Nombres    : ' + nombres);
-            console.log('Apellidos  : ' + apellidos);
-            console.log('Correo     : ' + correo);
-            console.log('Contraseña : ' + password);
-
-        
-
-            const toast = document.getElementById('registroToast');
-            const toastBootstrap 
-                = bootstrap.Toast.getOrCreateInstance(toast);
-
-            toastBootstrap.show();
-
-            document.getElementById("sp_loading").hidden = true;
-        }, 3000);
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
     }else{
         document.getElementById("aceptar").hidden = false;
     }
 }
+
 
 function formateaRut() {
 
