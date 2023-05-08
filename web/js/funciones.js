@@ -58,8 +58,7 @@ function validarCheck(){
                     $("#correo").val("");
                     $("#password").val("");
 
-                    /*llevar a la pagina principal*/ 
-                    /*window.location.href = "index.html"; */
+                    setTimeout(() => {window.location.href = "index.html"},4000);
                 } else if (response.result[0].RESPUESTA == 'ERR01') {
                     const Toast = Swal.mixin({
                         toast: true,
@@ -116,12 +115,20 @@ function login() {
                         toast.addEventListener('mouseenter', Swal.stopTimer)
                         toast.addEventListener('mouseleave', Swal.resumeTimer)
                     }
+                
                 })
 
                 Toast.fire({
                     icon: 'success',
                     title: 'Credenciales correctas'
                 });
+                
+                
+                var miModal = document.getElementById("exampleModal2");
+                $(miModal).modal("hide");
+                
+                setTimeout(() => {window.location.href = "iniciousuario.html"},4000);
+                
             } else if (response.result == 'LOGIN NOK') {
                 const Toast = Swal.mixin({
                     toast: true,
@@ -149,6 +156,74 @@ function login() {
         }
     });
 }
+
+
+function loginAdmin() {
+    document.getElementById("sp_loading").hidden = false;
+    
+    var rut = $("#txt_rut").val();
+    var contrasena = $("#txt_password").val();
+
+
+    var data = {
+        nombreFuncion: "ClienteLogin",
+        parametros: [rut, contrasena]
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+        data: JSON.stringify(data),
+        success: function (response) {
+            if (response.result == 'LOGIN OK') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Credenciales correctas'
+                });
+                document.getElementById("sp_loading").hidden = true;
+                setTimeout(() => {window.location.href = "administrador.html"},4000);
+
+            } else if (response.result == 'LOGIN NOK') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'warning',
+                    title: 'Credenciales inválidas'
+                });
+            }
+
+
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
+
 
 
 
@@ -210,4 +285,24 @@ function recuperacion(){
     let correo = document.getElementById("correo").value;
     console.log('Correo: ' + correo);
     Swal.fire('En breve recibirás un correo con las instrucciones a seguir para terminar el proceso.')
+}
+
+function suscribete(){
+    let sus = document.getElementById("footer-email").value;
+    console.log('Correo: ' + sus);
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    Toast.fire({
+        icon: 'success',
+        title: 'Gracias por suscribirte, recibiras 5% de descuento en tus compras'
+    });
 }

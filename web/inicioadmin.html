@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="style.css">
     <!--Icono web-->
     <link rel="website icon" type="png" href="assets/icono.png"> </i>
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- JAVASCRIPT -->
     <script src="js/funciones.js"></script>
 </head>
@@ -76,7 +80,7 @@
             <input class="controls" type="text" name="rut" id="txt_rut" placeholder="Ingrese su rut">
             <input class="controls" type="password" name="password" id="txt_password" placeholder="Ingrese su Contraseña">
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" class="btn btn-car btn-primary" onclick="almacenarAdmin()">
+            <button type="submit" class="btn btn-car btn-primary" onclick="loginAdmin()">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="sp_loading" hidden="true"></span>
                 <a>Iniciar sesión</a>
             </button>
@@ -188,7 +192,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-car btn-primary ">Inicio de sesion</button>
+                            <button type="submit" class="btn btn-car btn-primary " onclick="login()">Inicio de sesion</button>
                             <button type="submit" class="btn btn-car btn-primary "><a href="inicioadmin.html">Inicio sesion Admin</a></<p></button>
                         </div>
                             
