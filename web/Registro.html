@@ -77,9 +77,9 @@
         <!-- Registro -->
         <section class="form-registro ">
             <h4>Registro</h4>
-            <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su correo">
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
             <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
-            <input class="controls" class="controls"type="email" name="apellido" id="apellido" placeholder="Ingrese su apellido">
+            <input class="controls" class="controls"type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido">
             <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
             <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
             <h6 id="aceptar" class="text-center" hidden="true">Tiene que acepta</h6>
@@ -114,14 +114,15 @@
                     <div class="modal-content border-white">
                         <form>
                             <div class="mb-3" >
-                                <label for="txt_correo" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="txt_correo" aria-describedby="emailHelp">
+                                <label for="txt_correo_ini" class="form-label">Correo electronico</label>
+                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="correoLogin" aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text"></div>
                             </div>
                             <div class="mb-3">
-                                <label for="txt_contrasena" class="form-label">Contraseña</label>
-                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="txt_contrasena">
+                                <label for="txt_contrasena_ini" class="form-label">Contraseña</label>
+                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="passwordLogin">
                             </div>
+                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -133,8 +134,9 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-car btn-primary ">Inicio de sesion</button>
-                            <button type="submit" class="btn btn-car btn-primary "><a href="administrador.html">Inicio sesion Admin</a></<p></button>
+                            <button type="button" class="btn btn-car btn-primary " onclick="login()">Inicio de sesion</button>
+                            <button type="submit" class="btn btn-car btn-primary "><a href="inicioadmin.html">Inicio sesion Admin</a></<p></button>
+                                
                         </div>
                             
                             <div>

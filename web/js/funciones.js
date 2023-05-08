@@ -1,70 +1,3 @@
-function validarDatosInicioSesion(){
-    let correo = document.getElementById("txt_correo_ini").value;
-    let contrasena = document.getElementById("txt_contrasena_ini").value;
-        if(correo == '' || contrasena == '') {
-            document.getElementById("datos").hidden = false;
-        }else{
-            correo = $("#txt_correo_ini").val();
-            contrasena = $("#txt_contrasena_ini").val();
-
-
-            var data = {
-                nombreFuncion: "ClienteLogin",
-                parametros: [correo, contrasena]
-            };
-
-            $.ajax({
-                method: "POST",
-                url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
-                data: JSON.stringify(data),
-                success: function (response) {
-                    if (response.result == 'LOGIN OK') {
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 4000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                                toast.addEventListener('mouseenter', Swal.stopTimer)
-                                toast.addEventListener('mouseleave', Swal.resumeTimer)
-                            }
-                        })
-
-                        Toast.fire({
-                            icon: 'success',
-                            title: 'Credenciales correctas'
-                        });
-                    } else if (response.result == 'LOGIN NOK') {
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 4000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                                toast.addEventListener('mouseenter', Swal.stopTimer)
-                                toast.addEventListener('mouseleave', Swal.resumeTimer)
-                            }
-                        })
-
-                        Toast.fire({
-                            icon: 'warning',
-                            title: 'Credenciales inválidas'
-                        });
-                    }
-
-
-                    console.log(response);
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-                }
-}
-
-
 
 function validarDatosRegistro(){
     let nombres = document.getElementById("nombre").value;
@@ -94,7 +27,7 @@ function validarCheck(){
 
         var data = {
             nombreFuncion: "ClienteAlmacenar",
-            parametros: [nombres, apellidos, correo, contrasena]
+            parametros: [correo, contrasena, nombres, apellidos]
         };
 
         $.ajax({
@@ -157,6 +90,67 @@ function validarCheck(){
             document.getElementById("aceptar").hidden = false;
         }
 }
+function login() {
+    var correo = $("#correoLogin").val();
+    var contrasena = $("#passwordLogin").val();
+
+
+    var data = {
+        nombreFuncion: "ClienteLogin",
+        parametros: [correo, contrasena]
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+        data: JSON.stringify(data),
+        success: function (response) {
+            if (response.result == 'LOGIN OK') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Credenciales correctas'
+                });
+            } else if (response.result == 'LOGIN NOK') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'warning',
+                    title: 'Credenciales inválidas'
+                });
+            }
+
+
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
+
+
 
 
 function formateaRut() {

@@ -553,12 +553,12 @@
                         <form>
                             <div class="mb-3" >
                                 <label for="txt_correo_ini" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="txt_correo_ini" aria-describedby="emailHelp">
+                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="correoLogin" aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="txt_contrasena_ini" class="form-label">Contraseña</label>
-                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="txt_contrasena_ini">
+                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="passwordLogin">
                             </div>
                             <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
@@ -572,7 +572,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="button" class="btn btn-car btn-primary " onclick="validarDatosInicioSesion()">Inicio de sesion</button>
+                            <button type="button" class="btn btn-car btn-primary " onclick="login()">Inicio de sesion</button>
                             <button type="submit" class="btn btn-car btn-primary "><a href="inicioadmin.html">Inicio sesion Admin</a></<p></button>
                                 
                         </div>
