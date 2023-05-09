@@ -128,6 +128,8 @@ function login() {
                 $(miModal).modal("hide");
                 
                 setTimeout(() => {window.location.href = "iniciousuario.html"},4000);
+
+                almacenarCompraID()
                 
             } else if (response.result == 'LOGIN NOK') {
                 const Toast = Swal.mixin({
@@ -304,5 +306,92 @@ function suscribete(){
     Toast.fire({
         icon: 'success',
         title: 'Gracias por suscribirte, recibiras 5% de descuento en tus compras'
+    });
+}
+
+function crearProducto() {
+    var codigo = $("#codigo").val();
+    var nombre = $("#nombreProducto").val();
+    var descripcion = $("#descripcion").val();
+    var precio = $("#precio").val();
+    var stock = $("#stock").val();
+
+
+    var data = {
+        nombreFuncion: "ProductoAlmacenar",
+        parametros: [codigo, nombre,descripcion,precio,stock]
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+        data: JSON.stringify(data),
+        success: function (response) {
+            if (response.result[0].RESPUESTA == 'OK') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Producto almacenado'
+                });
+                
+                
+            } else if (response.result[0].RESPUESTA == 'ERR01') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'warning',
+                    title: 'Producto ya se encuentra registrado'
+                });
+            }
+
+
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
+
+function almacenarCompraID(){
+    let correoLogin = document.getElementById("correoLogin").value;
+    var data = {
+        nombreFuncion: "CompraAlmacenar",
+        parametros: [correoLogin]
+    };
+    $.ajax({
+        method: "POST",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+        data: JSON.stringify(data),
+        success: function (response) {
+            let codigoID = response.result[0].RESPUESTA
+        console.log(response);
+        console.log(codigoID);
+        },
+        error: function (error) {
+            console.log(error);
+        }
     });
 }

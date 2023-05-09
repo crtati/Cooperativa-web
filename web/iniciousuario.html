@@ -543,53 +543,7 @@
     </section>
     <!-- Nuestros Clientes fin -->
 
-    <!-- MODAL INICIO SESION -->
-    <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog b">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar sesión</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-content border-white">
-                        <form>
-                            <div class="mb-3" >
-                                <label for="txt_correo" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="txt_correo" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="txt_contrasena" class="form-label">Contraseña</label>
-                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="txt_contrasena">
-                            </div>
-                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
-                            <div class="links">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-                                
-                            </div>
-                            <div>
-                                <p class="ms-auto"><a href="recuperacion.html">¿Ha olvidado su contraseña?</a></p>
-                            </div>
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-car btn-primary ">Inicio de sesion</button>
-                            <button type="submit" class="btn btn-car btn-primary "><a href="inicioadmin.html">Inicio sesion Admin</a></<p></button>
-                        </div>
-                            
-                            <div>
-                                <p class="text-center">¿Aún no tiene una cuenta? <a href="Registro.html">Registrarse</a></<p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
-    <!--modal 2-->
     <!--CARRITO-->
     <div class="modal" tabindex="-1" id="exampleModal3">
         <div class="modal-dialog">
@@ -680,7 +634,7 @@
                     <h4>subscribe</h4>
                         <div class="subscribe-form">
                             <input type="email" placeholder="Correo" id="footer-email">
-                            <input type="submit" value="Suscribete" id="footer-email-btn">
+                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="suscribete()">
                         </div>
                     
                 </div>
