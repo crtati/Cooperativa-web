@@ -375,6 +375,7 @@ function crearProducto() {
     });
 }
 
+var codigoID;
 function almacenarCompraID(){
     let correoLogin = document.getElementById("correoLogin").value;
     var data = {
@@ -386,7 +387,7 @@ function almacenarCompraID(){
         url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
         data: JSON.stringify(data),
         success: function (response) {
-            let codigoID = response.result[0].RESPUESTA
+        response.result[0].RESPUESTA = codigoID
         console.log(response);
         console.log(codigoID);
         },
@@ -395,3 +396,71 @@ function almacenarCompraID(){
         }
     });
 }
+
+
+var productosFiltrados = [];
+function traerProductosApi(){
+    $.ajax({
+        method: "GET",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=ProductoListar",
+        CODIGO: 'CAJ*', fields: 'CODIGO,NOMBRE,DESCRIPCION,STOCK',
+        
+        success: function (response){
+
+            var result = response.result;
+
+            $.each(result, function(index, product) {
+                var productCodigo = product.CODIGO;
+                var productNombre = product.NOMBRE;
+                var productDescripcion = product.DESCRIPCION;
+                var productStock = product.STOCK;
+              // Filtra los productos que cumplen con el criterio CAJ
+                if (productCodigo.startsWith('CAJ')) {
+                    productosFiltrados.push({CODIGO: productCodigo, NOMBRE: productNombre, DESCRIPCION: productDescripcion, STOCK: productStock});
+                }
+            });
+            console.log(productosFiltrados);
+        },
+        error: function (error) {
+                console.log(error);
+        }
+    });
+}
+
+function listar(){
+    traerProductosApi()
+    var productos = document.getElementById('modal-card');
+
+    productosFiltrados.forEach(function(producto) {
+    var card = document.createElement('div');
+    card.classList.add('card');
+
+    var cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+
+    var productoCodigo = document.createElement('h5');
+    productoCodigo.classList.add('card-title');
+    productoCodigo.innerText = producto.CODIGO;
+
+    var productoNombre = document.createElement('p');
+    productoNombre.classList.add('card-text');
+    productoNombre.innerText = 'Nombre: ' + producto.NOMBRE;
+
+    var productoStock = document.createElement('p');
+    productoStock.classList.add('card-text');
+    productoStock.innerText = 'Stock: ' + producto.STOCK;
+
+    cardBody.appendChild(productoCodigo);
+    cardBody.appendChild(productoNombre);
+    cardBody.appendChild(productoStock);
+
+    card.appendChild(cardBody);
+
+    productos.appendChild(card);
+});
+}
+
+
+
+
+
