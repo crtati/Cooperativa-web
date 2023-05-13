@@ -1,3 +1,12 @@
+function redireccionar() {
+    if (correoLogin == null) {
+        $('#exampleModal2').modal('show');
+        $('#exampleModal3').modal('hide');
+    } else {
+        setTimeout(() => {window.location.href = "carrito.html"},4000);// aquí puedes cambiar la dirección de la redirección
+    }
+}
+
 
 function validarDatosRegistro(){
     let nombres = document.getElementById("nombre").value;
@@ -89,6 +98,8 @@ function validarCheck(){
             document.getElementById("aceptar").hidden = false;
         }
 }
+
+var correoLogin;
 function login() {
     var correo = $("#correoLogin").val();
     var contrasena = $("#passwordLogin").val();
@@ -105,6 +116,7 @@ function login() {
         data: JSON.stringify(data),
         success: function (response) {
             if (response.result == 'LOGIN OK') {
+                correoLogin = correo;
                 const Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
@@ -123,13 +135,10 @@ function login() {
                     title: 'Credenciales correctas'
                 });
                 
-                
                 var miModal = document.getElementById("exampleModal2");
                 $(miModal).modal("hide");
                 
                 setTimeout(() => {window.location.href = "iniciousuario.html"},4000);
-
-                almacenarCompraID()
                 
             } else if (response.result == 'LOGIN NOK') {
                 const Toast = Swal.mixin({
@@ -153,6 +162,7 @@ function login() {
 
             console.log(response);
         },
+        
         error: function (error) {
             console.log(error);
         }
@@ -375,30 +385,8 @@ function crearProducto() {
     });
 }
 
-var codigoID;
-function almacenarCompraID(){
-    let correoLogin = document.getElementById("correoLogin").value;
-    var data = {
-        nombreFuncion: "CompraAlmacenar",
-        parametros: [correoLogin]
-    };
-    $.ajax({
-        method: "POST",
-        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
-        data: JSON.stringify(data),
-        success: function (response) {
-        response.result[0].RESPUESTA = codigoID
-        console.log(response);
-        console.log(codigoID);
-        },
-        error: function (error) {
-            console.log(error);
-        }
-    });
-}
-
-
 var productosFiltrados = [];
+var codigoRescatado;
 function traerProductosApi(){
     $.ajax({
         method: "GET",
@@ -417,6 +405,7 @@ function traerProductosApi(){
               // Filtra los productos que cumplen con el criterio CAJ
                 if (productCodigo.startsWith('CAJ')) {
                     productosFiltrados.push({CODIGO: productCodigo, NOMBRE: productNombre, DESCRIPCION: productDescripcion, STOCK: productStock});
+                    codigoRescatado = product.CODIGO;
                 }
             });
             console.log(productosFiltrados);
@@ -460,7 +449,24 @@ function listar(){
 });
 }
 
-
-
-
+var codigoID;
+function almacenarID(){
+    var correoLogin = document.getElementById("correoLogin").value;
+                var data = {
+                    nombreFuncion: "CompraAlmacenar",
+                    parametros: [correoLogin]
+                };
+                $.ajax({
+                    method: "POST",
+                    url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+                    data: JSON.stringify(data),
+                    success: function (response) {
+                    codigoID = response.result[0].RESPUESTA
+                    console.log(response);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+} 
 
