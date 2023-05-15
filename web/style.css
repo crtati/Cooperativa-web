@@ -442,16 +442,16 @@ div .btn-car{
     margin: auto;
     width: 100%;
 }
-.table_productos{
+.table-producto{
     display: flex;
 }
-.table_productos > img{
+.table-producto img{
     width: 5rem;
     object-fit: contain;
     border-radius: 6px;
     margin-right: 20px;
 }
-.table_cantidad > input{
+.table-cantidad input{
     width: 40px;
     border: none;
     outline: 0;
@@ -459,4 +459,6 @@ div .btn-car{
     font-weight: 700;
     margin-right: 30px;
     margin-bottom: 20px;
+    display: flex;
+    text-align: center;
 }
