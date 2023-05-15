@@ -69,38 +69,70 @@
     </nav>
 </body>
 <!-- TABLA SEGUIMIENTO -->
-<section class="form-registro ">
 
-        <div class="container px-5">
-                <div class="row mb-5">
-                    <div class="col ml-5">
-                        <i class="bi bi-gear px-5"></i>
+    <section class="form-registro mx-auto w-50">
+        <section class="container">
+            <div class="text-center mb-4">
+                <p>Código de compra: zaa991jajan1j1</p>
+                <p>Fecha de pedido 14/05/2023</p>
+            </div>
+            <div class="">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Etapa del pedido</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Fecha estimada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Preparando pedido</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" style="width: 25%;">25%</div>
+                                </div>
+                            </td>
+                            <td>15/05/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Pedido enviado</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" style="width: 50%;">50%</div>
+                                </div>
+                            </td>
+                            <td>17/05/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Entregado</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 100%;">100%</div>
+                                </div>
+                            </td>
+                            <td>20/05/2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <i class="bi bi-box-seam fs-1 text-muted"></i>
                     </div>
-                    <label class="col">Preparando pedido</label>
+                    <div class="col-auto">
+                        <i class="bi bi-truck fs-1 text-warning"></i>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-check-circle fs-1 text-info"></i>
+                    </div>
                 </div>
+            </div>
+        </section>
+    </section>
+    
 
-                <div class="row mb-5 ">
-                    <div class="col ml-5">
-                        <i class="bi bi-send-check px-5"></i>
-                    </div>
-                    <label class="form-label col">Pedido enviado</label>
-                </div>
 
-                <div class="row mb-5">
-                    <div class="col ml-5">
-                        <i class="bi bi-truck px-5"></i>
-                    </div>
-                    <label class="form-label col">Pedido en transito</label>
-                </div>
 
-                <div class="row">
-                    <div class="col ml-5">
-                        <i class="bi bi-check2-circle px-5"></i>
-                    </div>
-                    <label class="form-label col">Pedido recibido</label>
-                </div>
-        </div>
-</section>
 
 
     <!-- MODAL INICIO SESION -->
@@ -123,7 +155,7 @@
                                 <label for="txt_contrasena_ini" class="form-label">Contraseña</label>
                                 <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="passwordLogin">
                             </div>
-                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
+                            <h6 id="datos" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -462,3 +462,34 @@ div .btn-car{
     display: flex;
     text-align: center;
 }
+/*seguimiento */
+.table {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.text-center {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.table tbody tr:hover {
+    background-color: #e2e3e5;
+}
+.progress-bar {
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.progress-bar {
+    animation: progress-bar 2s ease-in-out forwards;
+}
+
+@keyframes progress-bar {
+    0% {
+    width: 0;
+    }
+    100% {
+    width: 100%;
+    }
+}
