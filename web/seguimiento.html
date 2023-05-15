@@ -193,41 +193,38 @@
                 </div>
             <div class="modal-body">
                 <p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Productos</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Cantidad</th>
-                        </tr>
-                    </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td class="table_productos">
-                            <img src="assets/mace1.png"  alt="">
-                            <h6 class="tittle">Macetero</h6>
-                        </td>
-                        <td class="table_precio">$3.590</td>
-                        <td class="table_cantidad">
-                            <input class="inp" type="number" min="1" value="0">
-                            <button class="delete btn btn-danger">X</button>
-                        </td>
-                    </tr>
-                </tbody>
-                </table>
+                    <section>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                
+                            </tbody>
+                        </table>
+                        <div class="row mx-4">
+                            <div>
+                                <h3 class="item-car-total">Total: 0</h3>
+                            </div>
+                        </div>
+                    </section>
                 </p>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <a href="carrito.html">
-                    <button type="button" class="btn btn-primary">Comprar</button>
+            <div class="modal-footer col d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar <i class="bi bi-x-lg"></i></button>
+                <a >
+                    <button type="button" class="btn btn-primary" onclick="redireccionar()">Comprar <i class="bi bi-bag-heart-fill"></i></button>
                 </a>
             </div>
             </div>
         </div>
     </div>
+    <!-- TERMINO CARRITO -->
 
     <footer class="footer" id="contacto">
         <div class="container">
