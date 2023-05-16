@@ -1,13 +1,3 @@
-function redireccionar() {
-    if (correoLogin == null) {
-        $('#exampleModal2').modal('show');
-        $('#exampleModal3').modal('hide');
-    } else {
-        setTimeout(() => {window.location.href = "carrito.html"},2000);// aquí puedes cambiar la dirección de la redirección
-    }
-}
-
-
 function validarDatosRegistro(){
     let nombres = document.getElementById("nombre").value;
     let apellidos = document.getElementById("apellido").value;

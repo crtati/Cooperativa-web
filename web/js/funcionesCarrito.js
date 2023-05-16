@@ -1,3 +1,122 @@
+function redireccionar() {
+    if (correoEntrar == null) {
+        $('#exampleModal2').modal('show');
+        $('#exampleModal3').modal('hide');
+    } else {
+        setTimeout(() => {window.location.href = "carrito.html"},2000);// aquí puedes cambiar la dirección de la redirección
+    }
+}
+var correoEntrar;
+function login() {
+    var correo = $("#correoLogin").val();
+    var contrasena = $("#passwordLogin").val();
+    var data = {
+        nombreFuncion: "ClienteLogin",
+        parametros: [correo, contrasena]
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+        data: JSON.stringify(data),
+        success: function (response) {
+            if (response.result == 'LOGIN OK') {
+                correoEntrar = correo;
+                console.log(correoEntrar)
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                
+                })
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Credenciales correctas'
+                });
+                var miModal = document.getElementById("exampleModal2");
+                $(miModal).modal("hide");
+                addLocalStorageVariables()
+                setTimeout(() => {window.location.href = "iniciousuario.html"},4000);
+            } else if (response.result == 'LOGIN NOK') {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'warning',
+                    title: 'Credenciales inválidas'
+                });
+            }
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
+var codigoID;
+function almacenarID() {
+    var correoLogin = correoEntrar;
+    var data = {
+        nombreFuncion: "CompraAlmacenar",
+        parametros: [correoLogin]
+    };
+    return new Promise(function(resolve, reject) {
+        $.ajax({
+        method: "POST",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+        data: JSON.stringify(data),
+        success: function(response) {
+            codigoID = response.result[0].RESPUESTA
+            addLocalStorageVariables();
+            resolve();
+        },
+        error: function(error) {
+            console.log(error);
+            reject(error);
+            }
+        });
+    });
+}
+function compra() {
+    var id_compra = codigoID;
+    var codigo_producto = "Producto04"
+    var cantidad = 2;
+
+    almacenarID().then(function() {
+        var data = {
+        nombreFuncion:"CompraDetalleAlmacenar",
+        parametros:[id_compra,codigo_producto,cantidad]
+        };
+        $.ajax({
+        method: "POST",
+        url: "https://www.fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=CompraListar&correo="+correoEntrar,
+        data: JSON.stringify(data),
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+        });
+    });
+}
+
+
+
 /*carrito*/ 
 
 const clickButton = document.querySelectorAll('.button');
@@ -122,5 +241,22 @@ window.onload = function(){
         renderCarrito();
         
     }
+}
+function addLocalStorageVariables() {
+    localStorage.setItem('correoEntrar', correoEntrar);
+    localStorage.setItem('codigoID', JSON.stringify(codigoID));
+}
+
+window.onload = function(){
+    const storageCorreo = localStorage.getItem('correoEntrar');
+    if (storageCorreo) {
+        correoEntrar = storageCorreo;
+    }
+    console.log('Correo: ', correoEntrar);
+    const storageCodigo = localStorage.getItem('codigoID');
+    if (storageCodigo) {
+        codigoID = storageCodigo;
+    }
+    console.log('Codigo: ', codigoID);
 }
 
