@@ -77,9 +77,9 @@
         <section class="form-registro ">
             <h4 class="text-center">Recuperar contraseña</h4>
             <h6 class="text-center">Te enviaremos un email con instrucciones para recuperarla</h6>
-            <input class="controls" type="text" name="rut" id="correo" placeholder="Ingrese su correo electronico">
+            <input class="controls" type="text" name="rut" id="correoRecuperacion" placeholder="Ingrese su correo electronico">
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" class="btn btn-car btn-primary" onclick="recuperacion()">
+            <button type="submit" class="btn btn-car btn-primary" onclick="validarRecuperacion()">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="sp_loading" hidden="true"></span>
                 <a>Continuar</a>
             </button>
@@ -106,7 +106,7 @@
                                 <label for="txt_contrasena_ini" class="form-label">Contraseña</label>
                                 <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="passwordLogin">
                             </div>
-                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
+                            <h6 id="datos" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -221,7 +221,7 @@
                     <h4>subscribe</h4>
                         <div class="subscribe-form">
                             <input type="email" placeholder="Correo" id="footer-email">
-                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="suscribete()">
+                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="validarSuscribete()">
                         </div>
                     
                 </div>

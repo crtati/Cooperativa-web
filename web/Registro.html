@@ -81,8 +81,8 @@
             <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
             <input class="controls" class="controls"type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido">
             <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
-            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
-            <h6 id="aceptar" class="text-center" hidden="true">Tiene que acepta</h6>
+            <h6 id="datos" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
+            <h6 id="aceptar" class="text-center" hidden="true">Tiene que aceptar los terminos y condiciones</h6>
             <div class="term">
                 <form name="miForm">
                     <input class="check" type="checkbox" class="form-check-input" name="miCheck">
@@ -122,7 +122,7 @@
                                 <label for="txt_contrasena_ini" class="form-label">Contraseña</label>
                                 <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="passwordLogin">
                             </div>
-                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
+                            <h6 id="datos" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -239,7 +239,7 @@
                     <h4>subscribe</h4>
                         <div class="subscribe-form">
                             <input type="email" placeholder="Correo" id="footer-email">
-                            <input type="submit" value="Suscribete" id="footer-email-btn">
+                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="validarSuscribete()">
                         </div>
                     
                 </div>

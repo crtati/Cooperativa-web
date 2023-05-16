@@ -55,29 +55,13 @@
                     </li>
                 </ul>
                 </div>
-            </div>
-            <div class="nav">
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                    <div class="active" role="status">
-                        <i class="bi bi-person fs-3"> </i><span class="visually fs-3"></span>
-                    </div>
-                    
-                    
-                </button>
-            </div>
-            <div class="nav">
-                <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                    <div class="active" role="status">
-                        <i class="bi bi-cart fs-3"></i><span class="visually fs-5"></span>
-                    </div>      
-                </button>
-            </div>
+            </div>            
         </nav>
         
         <!-- Registro -->
         <section class="form-registro ">
-            <h4>Registro</h4>
-            <input class="controls" type="text" name="rut" id="txt_rut" placeholder="Ingrese su rut">
+            <h4>Administrador</h4>
+            <input class="controls" type="text" name="rut" id="txt_rut" placeholder="Ingrese su correo">
             <input class="controls" type="password" name="password" id="txt_password" placeholder="Ingrese su Contraseña">
         <div class="d-grid gap-2 col-6 mx-auto">
             <button type="submit" class="btn btn-car btn-primary" onclick="loginAdmin()">
@@ -141,117 +125,10 @@
 
         <!-- Copyright -->
         <div class="text-center p-4">
-            © 2023 Copyright:
+            © 2023 Copyright: Cooperativa 2023
             <a class="text-reset fw-bold" href=""></a>
         </div>
         </footer>
-        <!-- TOAST -->
-        <div class="toast-container position-fixed bottom-0 end-0 p-3">
-            <div id="registroToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    
-                    <strong class="me-auto">REGISTRO</strong>
-                    <small>Ahora</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    Se ha registrado exitosamente.
-                </div>
-            </div>
-        </div>
-
-    <!-- MODAL INICIO SESION -->
-    <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog b">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar sesión</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-content border-white">
-                        <form>
-                            <div class="mb-3" >
-                                <label for="txt_correo" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control" placeholder="Ingrese su correo" id="txt_correo" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="txt_contrasena" class="form-label">Contraseña</label>
-                                <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="txt_contrasena">
-                            </div>
-                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
-                            <div class="links">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-                                
-                            </div>
-                            <div>
-                                <p class="ms-auto"><a href="recuperacion.html">¿Ha olvidado su contraseña?</a></p>
-                            </div>
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-car btn-primary " onclick="login()">Inicio de sesion</button>
-                            <button type="submit" class="btn btn-car btn-primary "><a href="inicioadmin.html">Inicio sesion Admin</a></<p></button>
-                        </div>
-                            
-                            <div>
-                                <p class="text-center">¿Aún no tiene una cuenta? <a href="Registro.html">Registrarse</a></<p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- TERMINO MODAL INICIO SESION -->
-    
-    <!--modal 2-->
-    <!--CARRITO-->
-    <div class="modal" tabindex="-1" id="exampleModal3">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Carrito de compras</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            <div class="modal-body">
-                <p>
-                    <section>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Producto</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody class="tbody">
-                                
-                            </tbody>
-                        </table>
-                        <div class="row mx-4">
-                            <div>
-                                <h3 class="item-car-total">Total: 0</h3>
-                            </div>
-                        </div>
-                    </section>
-                </p>
-            </div>
-            <div class="modal-footer col d-flex justify-content-end">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar <i class="bi bi-x-lg"></i></button>
-                <a >
-                    <button type="button" class="btn btn-primary" onclick="redireccionar()">Comprar <i class="bi bi-bag-heart-fill"></i></button>
-                </a>
-            </div>
-            </div>
-        </div>
-    </div>
-    <!-- TERMINO MODAL CARRITO -->
-
-
 </body>
 
 </html>

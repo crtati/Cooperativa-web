@@ -19,9 +19,6 @@
     <link rel="website icon" type="png" href="assets/icono.png"> </i>
     <!-- SWEETALERT -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- AJAX -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <!-- JAVASCRIPT -->
     <script src="js/funciones.js"></script>
 </head>
 
@@ -126,344 +123,351 @@
         </button>
     </div>
 
-
-
-
-
-
     <br/>
     <div class="text-center p-4" style="background-color: #eee">
         <h1 class="display-6">Tierra de hojas</h1>
         <a class="text-reset fw-bold" href=""></a>
     </div>
     <br/>
-    <!--tienda 1-->
-    <div class="row" id="tienda">
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img class="img img-fluid" src="assets/tierra1.png" style="height: 20rem;"  class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tierra compost 50 litros Roots</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Contenido 50 litros</li>
-                            <li style="text-align: left;">Peso 25kg</li>
-                            <li style="text-align: left;">Tipo de producto: Tierra y sustratos</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $3.990</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" style="background-color: rgba(0, 0, 0, 0.05);">
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div>    
-                </div>
-            </div>
-        </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img class="img img-fluid" src="assets/tierra2.png" style="height: 20rem;" class=" card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tierra hoja 50 litros Roots</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Contenido: 50 litros</li>
-                            <li style="text-align: left;">Peso 25kg</li>
-                            <li style="text-align: left;">Tipo de producto: Tierra y sustratos</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $5.190</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img class="img" src="assets/tierra3.png" style="height: 20rem;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tierra hoja reforzada 25 litros Roots</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Contenido: 25 litros</li>
-                            <li style="text-align: left;">Peso: 8.590kg</li>
-                            <li style="text-align: left;">Tipo de producto: Tierra y sustratos</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $4.490</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <br/>
-    
-    <div class="text-center p-4" style="background-color: #eee">
-        <h1 class="display-6">Maceteros</h1>
-        <a class="text-reset fw-bold" href=""></a>
-    </div>
-    <br/>
-    <!--tienda 2-->
-    <div class="row">
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img src="assets/mace1.png" style="height: 20rem;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Macetero NYPON</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 12 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 11 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 10 cm</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $6.690</h5>
-                    <!--<a href="#" class="btn btn-dark boton-tarjeta" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Ver Detalle</a>-->
 
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
+    <section >   
+        <br/>
+        <div class="text-center p-4" style="background-color: #eee">
+            <h1 class="display-6">Tierra de hojas</h1>
+            <a class="text-reset fw-bold" href=""></a>
+        </div>
+        <br/>
+        <!--tienda 1-->
+        <div class="row" id="tienda">
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img class="img img-fluid card-img-top" src="assets/tierra1.png" style="height: 20rem;"   alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tierra compost 50 litros Roots</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Contenido 50 litros</li>
+                                <li style="text-align: left;">Peso 25kg</li>
+                                <li style="text-align: left;">Tipo de producto: Tierra y sustratos</li>
+                            </ul>
+                        </p>
+                        <h5 >Precio: <span class="precio">$3200</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" style="background-color: rgba(0, 0, 0, 0.05);">
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-car btn-outline-secondary button">Añadir al carro</button>
+                            </div>
+                        </div>    
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img src="assets/mace2.png" style="height: 20rem;" class=" card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Macetero DRÖMSK</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 10 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 10 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 9 cm</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $3.490</h5>
-                    <!--<a href="#" class="btn btn-primary boton-tarjeta" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Ver Detalle</a>-->
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img class="img img-fluid card-img-top" src="assets/tierra2.png" style="height: 20rem;"  alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tierra hoja 50 litros Roots</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Contenido: 50 litros</li>
+                                <li style="text-align: left;">Peso 25kg</li>
+                                <li style="text-align: left;">Tipo de producto: Tierra y sustratos</li>
+                            </ul>
+                        </p>
+                        <h5 >Precio: <span class="precio">$5200</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-car btn-outline-secondary button">Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img class="img img-fluid card-img-top" src="assets/tierra3.png" style="height: 20rem;"  alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tierra hoja reforzada 25 litros Roots</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Contenido: 25 litros</li>
+                                <li style="text-align: left;">Peso: 8.590kg</li>
+                                <li style="text-align: left;">Tipo de producto: Tierra y sustratos</li>
+                            </ul>
+                        </p>
+                        <h5>Precio: <span class="precio">$4490</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-car btn-outline-secondary button" >Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        
 
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" style:  >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
-                </div>
-            </div>
+        <br/>
+        
+        <div class="text-center p-4" style="background-color: #eee">
+            <h1 class="display-6">Maceteros</h1>
+            <a class="text-reset fw-bold" href=""></a>
         </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img src="assets/mace3.png" style="height: 20rem;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Macetero MUSKOT</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 11 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 12 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 11 cm</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $2.490</h5>
-                    <!--<a href="#" class="btn btn-primary boton-tarjeta" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Ver Detalle</a>-->
+        <br/>
+        <!--tienda 2-->
+        <div class="row">
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img src="assets/mace1.png" style="height: 20rem;" class="img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Macetero NYPON</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 12 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 11 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 10 cm</li>
+                            </ul>
+                        </p>
+                        <h5>Precio: <span class="precio">$6800</span></h5>
+                        <!--<a href="#" class="btn btn-dark boton-tarjeta" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Ver Detalle</a>-->
 
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button  class="btn btn-car btn-outline-secondary button">Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img src="assets/mace2.png" style="height: 20rem;" class=" img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Macetero DRÖMSK</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 10 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 10 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 9 cm</li>
+                            </ul>
+                        </p>
+                        <h5>Precio: <span class="precio">$3490</span></h5>
+                        <!--<a href="#" class="btn btn-primary boton-tarjeta" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Ver Detalle</a>-->
 
-    <br/>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" style:  >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button  class="btn btn-car btn-outline-secondary button">Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img src="assets/mace3.png" style="height: 20rem;" class="img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Macetero MUSKOT</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 11 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 12 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 11 cm</li>
+                            </ul>
+                        </p>
+                        <h5>Precio: <span class="precio">$2490</span></h5>
+                        <!--<a href="#" class="btn btn-primary boton-tarjeta" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Ver Detalle</a>-->
 
-    <div class="text-center p-4" style="background-color:#eee;">
-        <h1 class="display-6">Flores</h1>
-        <a class="text-reset fw-bold" href=""></a>
-    </div>
-    <br/>
-    <!--tienda 3-->
-    <div class="row">
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img src="assets/flor.png" style="height: 20rem;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">DI FIORI SOLEIL 10</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 12 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 11 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 10 cm</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $36.490</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button  class="btn btn-car btn-outline-secondary button" >Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img src="assets/flor2.png" style="height: 20rem;" class=" card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">DI FIORI 18 GYPSU</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 10 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 10 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 9 cm</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $49.890</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img src="assets/flor3.png" style="height: 20rem;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">KYUBU 24 MULTICOLORE</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 10 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 10 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 9 cm</li></p>
-                        </ul>
-                    <h5>Precio: $55.490</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="text-center p-4" style="background-color: #eee;">
-        <h1 class="display-6">Arbustos</h1>
-        <a class="text-reset fw-bold" href=""></a>
-    </div>
-    <br/>
 
-    <!--tienda3part2-->
-    <div class="row">
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem; " >
-                <img class="img" src="assets/arbusto1.png" style="height: 20rem;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Arbusto Boj en Bola</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 12 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 11 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 10 cm</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $36.000</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
+        <br/>
+
+        <div class="text-center p-4" style="background-color:#eee;">
+            <h1 class="display-6">Flores</h1>
+            <a class="text-reset fw-bold" href=""></a>
+        </div>
+        <br/>
+        <!--tienda 3-->
+        <div class="row">
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img src="assets/flor.png" style="height: 20rem;" class="img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">DI FIORI SOLEIL 10</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 12 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 11 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 10 cm</li>
+                            </ul>
+                        </p>
+                        <h5>Precio: <span class="precio">$36000</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button  class="btn btn-car btn-outline-secondary button" >Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img src="assets/flor2.png" style="height: 20rem;" class=" img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">DI FIORI 18 GYPSU</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 10 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 10 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 9 cm</li>
+                            </ul>
+                        </p>
+                        <h5 >Precio: <span class="precio">$49000</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button  class="btn btn-car btn-outline-secondary button" >Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img src="assets/flor3.png" style="height: 20rem;" class="img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">KYUBU 24 MULTICOLORE</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 10 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 10 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 9 cm</li></p>
+                            </ul>
+                        <h5>Precio: <span class="precio">$55490</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-car btn-outline-secondary button" >Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img class="img" src="assets/arbusto2.png" style="height: 20rem;" class=" card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Arbusto Boj</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 10 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 10 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 9 cm</li>
-                        </ul>
-                    </p>
-                    <h5>Precio: $12.000</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
+        <br/>
+        <div class="text-center p-4" style="background-color: #eee;">
+            <h1 class="display-6">Arbustos</h1>
+            <a class="text-reset fw-bold" href=""></a>
+        </div>
+        <br/>
+
+        <!--tienda3part2-->
+        <div class="row">
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem; " >
+                    <img class="img" src="assets/arbusto1.png" style="height: 20rem;" class="img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Arbusto Boj en Bola</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 12 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 11 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 10 cm</li>
+                            </ul>
+                        </p>
+                        <h5 >Precio: <span class="precio">$32000</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button  class="btn btn-car btn-outline-secondary button" >Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img class="img" src="assets/arbusto2.png" style="height: 20rem;" class="img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Arbusto Boj</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 10 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 10 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 9 cm</li>
+                            </ul>
+                        </p>
+                        <h5 >Precio: <span class="precio">$12000</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-car btn-outline-secondary button" >Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col" align="center">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                    <img class="img" src="assets/arbusto3.png" style="height: 20rem;" class="img img-fluid card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Arbusto Picea</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li style="text-align: left;">Alto: 10 cm</li>
+                                <li style="text-align: left;">Diámetro exterior: 10 cm</li>
+                                <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
+                                <li style="text-align: left;">Diámetro interior: 9 cm</li></p>
+                            </ul>
+                            <h5 >Precio: <span class="precio">$108000</span></h5>
+                        <!--BOTON AÑADIR AL CARRITO-->
+                        <div class="btn-group" role="group" >
+                            <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                            <div class="btn-group" role="group">
+                                <button  class="btn btn-car btn-outline-secondary button">Añadir al carro</button>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col" align="center">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-                <img class="img" src="assets/arbusto3.png" style="height: 20rem;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Arbusto Picea</h5>
-                    <p class="card-text">
-                        <ul>
-                            <li style="text-align: left;">Alto: 10 cm</li>
-                            <li style="text-align: left;">Diámetro exterior: 10 cm</li>
-                            <li style="text-align: left;">Diámetro máximo macetero: 9 cm</li>
-                            <li style="text-align: left;">Diámetro interior: 9 cm</li></p>
-                        </ul>
-                        <h5>Precio: $108.000</h5>
-                    <!--BOTON AÑADIR AL CARRITO-->
-                    <div class="btn-group" role="group" >
-                        <td><input class="inp" type="number" min="1" value="0"></td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-car btn-outline-secondary" onclick="toastCarrito()">Añadir al carro</button>
-                        </div>
-                    </div> 
-                </div>
-            </div>
+        
         </div>
-    </div>
+    </section>
 
     <!-- Nuestros Clientes inicio -->
     <section class="clientes" id="clientes">
@@ -560,7 +564,7 @@
                                 <label for="txt_contrasena_ini" class="form-label">Contraseña</label>
                                 <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="passwordLogin">
                             </div>
-                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
+                            <h6 id="datos" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -677,7 +681,7 @@
                     <h4>subscribe</h4>
                         <div class="subscribe-form">
                             <input type="email" placeholder="Correo" id="footer-email">
-                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="suscribete()">
+                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="validarSuscribete()">
                         </div>
                 </div>
             </div>
@@ -706,7 +710,10 @@
             </div>
         </div>
     </div>
-
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="js/funcionesCarrito.js"></script>
 
 </body>
 

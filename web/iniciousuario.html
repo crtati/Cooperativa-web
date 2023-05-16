@@ -19,6 +19,7 @@
     <link rel="website icon" type="png" href="assets/icono.png"> </i>
     <!-- SWEETALERT -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/funciones.js"></script>
 
 </head>
 
@@ -574,8 +575,8 @@
             </div>
             <div class="modal-footer col d-flex justify-content-end">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar <i class="bi bi-x-lg"></i></button>
-                <a >
-                    <button type="button" class="btn btn-primary" onclick="redireccionar()">Comprar <i class="bi bi-bag-heart-fill"></i></button>
+                <a href="carrito.html">
+                    <button type="button" class="btn btn-primary">Comprar <i class="bi bi-bag-heart-fill"></i></button>
                 </a>
             </div>
             </div>
@@ -625,7 +626,7 @@
                     <h4>subscribe</h4>
                         <div class="subscribe-form">
                             <input type="email" placeholder="Correo" id="footer-email">
-                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="suscribete()">
+                            <input type="submit" value="Suscribete" id="footer-email-btn" onclick="validarSuscribete()">
                         </div>
                     
                 </div>
@@ -659,7 +660,8 @@
     <!-- AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- JAVASCRIPT -->
-    <script src="js/funciones.js"></script>
+    <script src="js/funcionesCarrito.js"></script>
+
 </body>
 
 </html>

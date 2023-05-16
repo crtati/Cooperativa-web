@@ -19,11 +19,8 @@
     <link rel="website icon" type="png" href="assets/icono.png"> </i>
     <!-- SWEETALERT -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- AJAX -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    
-    <!-- JAVASCRIPT -->
     <script src="js/funciones.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-dark" >
@@ -49,13 +46,16 @@
             </ul>
         </div>
         <div class="nav">
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                <div class="active" role="status">
+            <div class="dropdown dropstart">
+                <button class="btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person fs-3"> </i><span class="visually fs-3"></span>
-                </div>
-                
-                
-            </button>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Mi perfíl</a></li>
+                    <li><a class="dropdown-item" href="#">Mis compras</a></li>
+                    <li><a class="dropdown-item" href="index.html">Salir</a></li>
+                </ul>
+            </div>
         </div>
         <div class="nav">
             <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
@@ -96,7 +96,7 @@
                     <button type="button" class="btn btn-outline-secondary">Cancelar</button>
                 </div>
                 <div class="px-4">
-                    <button type="button" class="btn btn-outline-success">Comprar</button>
+                    <button id="botonComprar" type="button" class="btn btn-outline-success">Comprar</button>
                 </div>
             </div>
     </div>
@@ -121,7 +121,7 @@
                                 <label for="txt_contrasena" class="form-label">Contraseña</label>
                                 <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="passwordLogin">
                             </div>
-                            <h6 id="datos" class="text-center" hidden="true">Ingrese correctamente los datos</h6>
+                            <h6 id="datos" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
                             <div class="links">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -191,5 +191,9 @@
         </div>
     </div>
     <!-- TERMINO MODAL CARRITO -->
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="js/funcionesCarrito.js"></script>
 </body>
 </html>

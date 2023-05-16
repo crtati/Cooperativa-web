@@ -22,7 +22,7 @@
         <!-- AJAX -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <!-- JAVASCRIPT -->
-        <script src="js/funciones.js"></script>
+        <script src="js/funcionesAdmin.js"></script>
 
         <link rel="shortcut icon" href="assets/icono.png" />
         </head>
@@ -44,12 +44,12 @@
                     <a class="nav-link" href="index.html" style="color: #130f40;"><span class="fs-4">tienda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" style="color: #130f40;" data-bs-toggle="modal" data-bs-target="#mdlContenedorP">
+                    <a class="nav-link" href="" style="color: #130f40;">
                         <span class="fs-4">Mantenedor clientes
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" style="color: #130f40;">
+                    <a class="nav-link" href="" style="color: #130f40;" data-bs-toggle="modal" data-bs-target="#mdlContenedorP">
                         <span class="fs-4">Mantenedor productos
                         </a>
                 </li>
@@ -90,8 +90,9 @@
                         <input class="controls" class="controls"type="text" name="descripcion" id="descripcion" placeholder="Ingrese descripcion">
                         <input class="controls" type="text" name="precio" id="precio" placeholder="Ingrese precio">
                         <input class="controls" type="text" name="stock" id="stock" placeholder="Ingrese stock">
+                        <h6 id="datos" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
                         <div class="mb-3">
-                            <button type="button" class="btn btn-outline-success" onclick="crearProducto()">Crear producto</button>
+                            <button type="button" class="btn btn-outline-success" onclick="validarDatosProducto()">Crear producto</button>
                         </div>
                         <div><button type="button" class="btn btn-outline-success">Eliminar producto</button></div>
                     </div>
@@ -106,8 +107,9 @@
                         <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
                         <input class="controls" class="controls"type="text" name="apellido" id="apellido" placeholder="Ingrese apellido">
                         <input class="controls" type="password" name="password" id="password" placeholder="Ingrese contraseña">
+                        <h6 id="datosU" class="text-center text-danger" hidden="true">Ingrese correctamente los datos</h6>
                         <div class="mb-3">
-                            <button type="button" class="btn btn-outline-success">Crear usuario</button>
+                            <button type="button" class="btn btn-outline-success" onclick="validarDatosRegistro()">Crear usuario</button>
                         </div>
                         <div><button type="button" class="btn btn-outline-success">Eliminar usuario</button></div>
                     </div>
