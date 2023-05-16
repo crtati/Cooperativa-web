@@ -92,28 +92,33 @@ function almacenarID() {
     });
 }
 function compra() {
-    var id_compra = codigoID;
-    var codigo_producto = "Producto04"
-    var cantidad = 2;
+    
 
     almacenarID().then(function() {
-        var data = {
-        nombreFuncion:"CompraDetalleAlmacenar",
-        parametros:[id_compra,codigo_producto,cantidad]
-        };
-        $.ajax({
-        method: "POST",
-        url: "https://www.fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=CompraListar&correo="+correoEntrar,
-        data: JSON.stringify(data),
-        success: function(response) {
-            console.log(response);
-        },
-        error: function(error) {
-            console.log(error);
+        for (var i = 0; i < carrito.length; i++) {
+            var id_compra = codigoID;
+            var codigo_producto = carrito[i].codigo; // Supongamos que el código se encuentra en la propiedad "codigo" del objeto en carrito
+            var cantidad = carrito[i].cantidad;
+            
+            var data = {
+                nombreFuncion: "CompraDetalleAlmacenar",
+                parametros: [id_compra, codigo_producto, cantidad]
+            };
+            $.ajax({
+                method: "POST",
+                url: "https://www.fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=CompraListar&correo=" + correoEntrar,
+                data: JSON.stringify(data),
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
         }
-        });
     });
 }
+
 
 
 
@@ -132,10 +137,12 @@ function addToCarritoItem(e) {
     const button = e.target
     const item = button.closest('.card')
     const itemTitulo = item.querySelector('.card-title').textContent;
+    const itemCodigo = item.querySelector('.card-codigo').textContent;
     const itemPrecio = item.querySelector('.precio').textContent;
     const itemCantidad = item.querySelector('.cantidad').value;
     const itemImg = item.querySelector('.card-img-top').src;
     const newItem ={
+        codigo: itemCodigo,
         title: itemTitulo,
         price: itemPrecio,
         image: itemImg,
@@ -234,14 +241,6 @@ function addLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-window.onload = function(){
-    const storage = JSON.parse(localStorage.getItem('carrito'));
-    if (storage) {
-        carrito = storage;
-        renderCarrito();
-        
-    }
-}
 function addLocalStorageVariables() {
     localStorage.setItem('correoEntrar', correoEntrar);
     localStorage.setItem('codigoID', JSON.stringify(codigoID));
@@ -258,5 +257,11 @@ window.onload = function(){
         codigoID = storageCodigo;
     }
     console.log('Codigo: ', codigoID);
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if (storage) {
+        carrito = storage;
+        renderCarrito();
+    }
+    console.log('Carrito: ', carrito);
 }
 
