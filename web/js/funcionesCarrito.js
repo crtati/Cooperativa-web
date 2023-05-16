@@ -4,6 +4,7 @@ function redireccionar() {
         $('#exampleModal3').modal('hide');
     } else {
         setTimeout(() => {window.location.href = "carrito.html"},2000);// aquí puedes cambiar la dirección de la redirección
+        almacenarID();
     }
 }
 var correoEntrar;
