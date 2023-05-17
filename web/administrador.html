@@ -43,16 +43,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html" style="color: #130f40;"><span class="fs-4">tienda</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="" style="color: #130f40;">
-                        <span class="fs-4">Mantenedor clientes
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="" style="color: #130f40;" data-bs-toggle="modal" data-bs-target="#mdlContenedorP">
-                        <span class="fs-4">Mantenedor productos
-                        </a>
-                </li>
             </ul>
             </div>
         </div>
@@ -69,7 +59,7 @@
             </div>
         </div>
         <div class="nav">
-            <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+            <button type="button" class="btn btn" >
                 <div class="active" role="status">
                     <i class="bi bi-search fs-4"></i>
                 </div>      
@@ -84,7 +74,7 @@
             <section class="container form-registro px-5 ">
                 <div class="row mb-5 text-center">
                     <div class="col ml-5">
-                        <h4>Crear o eliminar producto</h4>
+                        <h4>Mantenedor Productos</h4>
                         <input class="controls" type="text" name="codigo" id="codigo" placeholder="Ingrese codigo">
                         <input class="controls" type="text" name="nombreProducto" id="nombreProducto" placeholder="Ingrese su nombre">
                         <input class="controls" class="controls"type="text" name="descripcion" id="descripcion" placeholder="Ingrese descripcion">
@@ -94,7 +84,10 @@
                         <div class="mb-3">
                             <button type="button" class="btn btn-outline-success" onclick="validarDatosProducto()">Crear producto</button>
                         </div>
-                        <div><button type="button" class="btn btn-outline-success">Eliminar producto</button></div>
+                        <div class="mb-3"><button type="button" class="btn btn-outline-success">Eliminar producto</button></div>
+                        <div><button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#mdlContenedorP">
+                            Lista de productos
+                        </button></div>
                     </div>
                 </div>
             </section>
@@ -102,7 +95,7 @@
             <section class="container form-registro px-5 ">
                 <div class="row mb-5 text-center">
                     <div class="col ml-5">
-                        <h4>Crear o eliminar usuario </h4>
+                        <h4>Mantenedor Usuarios</h4>
                         <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese correo">
                         <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
                         <input class="controls" class="controls"type="text" name="apellido" id="apellido" placeholder="Ingrese apellido">
@@ -111,7 +104,8 @@
                         <div class="mb-3">
                             <button type="button" class="btn btn-outline-success" onclick="validarDatosRegistro()">Crear usuario</button>
                         </div>
-                        <div><button type="button" class="btn btn-outline-success">Eliminar usuario</button></div>
+                        <div class="mb-3"><button type="button" class="btn btn-outline-success">Eliminar usuario</button></div>
+                        <div><button type="button" class="btn btn-outline-success">Lista de usuarios</button></div>
                     </div>
                 </div>
             </section>
@@ -125,7 +119,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center">Productos</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div class="modal-body" id="modal-card">
 
@@ -136,7 +130,7 @@
             </div>
             </div>
         </div>
-        </div>
+    </div>
 </body>
 
 </html>

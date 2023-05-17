@@ -147,7 +147,6 @@ function traerProductosApi(){
 }
 /*LISTAR EN MODAL NUESTROS PRODUCTOS */
 function listar(){
-    traerProductosApi()
     var productos = document.getElementById('modal-card');
 
     productosFiltrados.forEach(function(producto) {
@@ -273,6 +272,7 @@ window.onload = function() {
     // ...
 
     addLocalStorageCards();
+    traerProductosApi()
 
     // ...
 }
