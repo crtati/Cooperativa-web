@@ -117,7 +117,32 @@ function compra() {
                 }
             });
         }
+        var button = document.getElementById("myButton");
+        button.style.display = "block";
     });
+}
+function mostrarBoleta() {
+    var modalContent = '';
+    var id_compra = codigoID;
+    modalContent += '<h6 class="card-title text-center mb-4">Código de compra: ' + id_compra + '</h6>';
+    for (var i = 0; i < carrito.length; i++) {
+        var codigo_producto = carrito[i].codigo;
+        var cantidad = carrito[i].cantidad;
+        var imagen = carrito[i].image;
+
+        modalContent += '<div class="card mb-3">';
+        modalContent += '<img src="' + imagen + '" class="card-img-top" alt="Imagen del producto">';
+        modalContent += '<div class="card-body">';
+        modalContent += '<h5 class="card-title text-center">Código Producto: ' + codigo_producto + '</h5>';
+        modalContent += '<h5 class="card-text text-center">Cantidad: ' + cantidad + '</h5>';
+        modalContent += '</div>';
+        modalContent += '</div>';
+        modalContent += '<hr>'; // Separador entre cada conjunto de variables
+    }
+
+    // Asignar el contenido al modal
+    $('#miModal').find('.modal-body').html(modalContent);
+    $('#miModal').modal('show');
 }
 
 

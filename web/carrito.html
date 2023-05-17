@@ -91,12 +91,17 @@
                     </section>
                 </p>
             </div>
-            <div class="modal-footer px-4">
+            <div class="modal-footer px-5">
                 <div>
                     <button type="button" class="btn btn-outline-secondary">Cancelar</button>
                 </div>
                 <div class="px-4">
                     <button id="botonComprar" type="button" class="btn btn-outline-success" onclick="compra()">Comprar</button>
+                </div>
+                <div >
+                    <button id="myButton" type="button" class="btn btn-outline-success" onclick="mostrarBoleta()" style="display: none;">
+                        Boleta
+                    </button>
                 </div>
             </div>
     </div>
@@ -191,6 +196,26 @@
         </div>
     </div>
     <!-- TERMINO MODAL CARRITO -->
+
+    <!-- MODAL BOLETA -->
+    <div id="miModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="miModalLabel">Boleta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TERMINO MODAL BOLETA -->
+    
     <!-- AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- JAVASCRIPT -->
