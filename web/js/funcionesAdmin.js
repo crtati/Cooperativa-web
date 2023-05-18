@@ -1,15 +1,20 @@
-/*CREACION Y VALIDACION PRODUCTO */
-function validarDatosProducto(){
+function validarDatosProducto() {
     let codigo = document.getElementById("codigo").value;
     let nombreProducto = document.getElementById("nombreProducto").value;
     let descripcion = document.getElementById("descripcion").value;
     let precio = document.getElementById("precio").value;
     let stock = document.getElementById("stock").value;
-        if(codigo == '' || nombreProducto == '' || descripcion == '' || precio == '' || stock == '') {
-            document.getElementById("datos").hidden = false;
-        }else{
-            crearProducto();
-        }
+
+    if (!codigo.startsWith("CAJ")) {
+        document.getElementById("datosc").hidden = false;
+    } else if (codigo === '' || nombreProducto === '' || descripcion === '' || precio === '' || stock === '') {
+        document.getElementById("datos").hidden = false;
+        document.getElementById("datosc").hidden = true;
+    } else {
+        crearProducto();
+        document.getElementById("datos").hidden = true;
+        document.getElementById("datosc").hidden = true;
+    }
 }
 function crearProducto() {
     var codigo = $("#codigo").val();
@@ -17,41 +22,6 @@ function crearProducto() {
     var descripcion = $("#descripcion").val();
     var precio = $("#precio").val();
     var stock = $("#stock").val();
-    // Crear la nueva card con los datos del formulario
-    var nuevaCard = `
-    <div class="col" align="center">
-        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
-            <h5 class="card-codigo">${codigo}</h5>
-            <img class="img img-fluid card-img-top" src="assets/tierra1.png" style="height: 20rem;" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${nombre}</h5>
-                <p class="card-text">
-                    <ul>
-                        <li style="text-align: left;">${descripcion}</li>
-                        <!-- Otros elementos de la lista -->
-                    </ul>
-                </p>
-                <h5>Precio: <span class="precio">${precio}</span></h5>
-                <!--BOTON AÑADIR AL CARRITO-->
-                <div class="btn-group" role="group" style="background-color: rgba(0, 0, 0, 0.05);">
-                    <td><input class="inp cantidad" type="number" min="1" value="1"></td>
-                    <div class="btn-group" role="group">
-                        <button class="btn btn-car btn-outline-secondary button">Añadir al carro</button>
-                    </div>
-                </div>    
-            </div>
-        </div>
-    </div>
-    `;
-
-    // Agregar la nueva card al div "tienda"
-    $("#tienda").append(nuevaCard);
-    // Agregar la card a la variable storedCards
-    storedCards.push(nuevaCard);
-    // Guardar la variable storedCards en el localStorage
-    localStorage.setItem('cards', JSON.stringify(storedCards));
-
-
     var data = {
         nombreFuncion: "ProductoAlmacenar",
         parametros: [codigo, nombre,descripcion,precio,stock]
@@ -63,6 +33,38 @@ function crearProducto() {
         data: JSON.stringify(data),
         success: function (response) {
             if (response.result[0].RESPUESTA == 'OK') {
+                // Crear la nueva card con los datos del formulario
+                var nuevaCard = `
+                <div class="col" align="center">
+                    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem;">
+                        <h5 class="card-codigo">${codigo}</h5>
+                        <img class="img img-fluid card-img-top" src="assets/tierra1.png" style="height: 20rem;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${nombre}</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li style="text-align: left;">${descripcion}</li>
+                                    <!-- Otros elementos de la lista -->
+                                </ul>
+                            </p>
+                            <h5>Precio: <span class="precio">${precio}</span></h5>
+                            <!--BOTON AÑADIR AL CARRITO-->
+                            <div class="btn-group" role="group" style="background-color: rgba(0, 0, 0, 0.05);">
+                                <td><input class="inp cantidad" type="number" min="1" value="1"></td>
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-car btn-outline-secondary button">Añadir al carro</button>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                `;
+                // Agregar la nueva card al div "tienda"
+                $("#tienda").append(nuevaCard);
+                // Agregar la card a la variable storedCards
+                storedCards.push(nuevaCard);
+                // Guardar la variable storedCards en el localStorage
+                localStorage.setItem('cards', JSON.stringify(storedCards));
                 const Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
